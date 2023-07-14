@@ -1,0 +1,108 @@
+.container-main {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+
+.content {
+  width: 80%;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-top: -3rem;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  z-index: 1;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.card-title {
+  margin-left: 1rem;
+  color: #222;
+}
+
+.card-quantity {
+  color: #222;
+  padding: 10px;
+}
+
+.quantity-button{
+  font-size: 24px;
+    color: #222;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #c6d9f1;
+    border: 1px solid #222;
+}
+
+.quantity-control{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-button {
+  padding: 0.6rem 0.4rem;
+  font-size: 1rem;
+  background-color: #c6d9f1;
+  color: #222;
+  border: 1px solid #222;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+.update-button:hover {
+  background-color: #fffe01;
+  border: 1px solid #222;
+  color: #222;
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 768px) {
+
+  .card{
+    justify-content: center;
+  }
+  .card-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-quantity {
+    margin-top: 0.5rem;
+  }
+
+  .update-button {
+    margin-top: 0.5rem;
+    margin-right: 0;
+  }
+}

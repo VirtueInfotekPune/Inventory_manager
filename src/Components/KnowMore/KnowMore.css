@@ -1,0 +1,51 @@
+.know-more-page {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .order-card {
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 5px;
+  }
+  
+  h3 {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  .btn-detail {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .update-button-detail {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 600px) {
+    .know-more-page {
+      padding: 10px;
+    }
+  
+    .order-card {
+      padding: 5px;
+    }
+  }
+  

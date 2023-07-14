@@ -1,0 +1,14 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #b3d8ca;
+    height: 100vh;
+    color: #fff;
+  
+  }
+
+  @media only screen and (max-width: 768px) {
+    .C{
+      padding-top: 12rem;
+    }
+  }

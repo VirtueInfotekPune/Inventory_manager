@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    /* height: 99vh; */
+    height: auto !important;
+    width: 99%;
+  }
+  
+  .sidebar {
+    width: 20%;
+    height: 90%;
+  }
+  
+  .main {
+    background-color: #c6d9f1;
+    flex-grow: 1;
+    height: auto !important;
+    /* height: auto !important; */
+    width: 80%;
+  }
+  
+
+  @media only screen and (max-width: 768px) {
+
+   .main{
+    height: 157vh;
+    width: 2000vh;
+   }
+   
+
+    
+  }
+  @media (max-width:768px){
+    .main{
+
+      height: 1100px !important;
+      
+    }
+  }
+  
