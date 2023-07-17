@@ -13,7 +13,7 @@ const UserList = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/users"
+        "https://adminpr.onrender.com/api/delivpar/"
       );
       setUsers(response.data);
     } catch (error) {
@@ -23,6 +23,7 @@ const UserList = () => {
 
   const handleAssign = (userId) => {
     const assignedUser = users.find((user) => user.id === userId);
+    
     setAssignedAgent(assignedUser);
     setUsers(users.filter((user) => user.id !== userId));
     alert(`Order assigned to ${assignedUser.name}`);

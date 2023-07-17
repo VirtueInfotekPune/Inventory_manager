@@ -19,7 +19,7 @@ function AssignPage() {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/users"
+        "https://adminpr.onrender.com/api/delivpar/"
       );
       setUsers(response.data);
     } catch (error) {
@@ -47,7 +47,7 @@ function AssignPage() {
               onClose={() => setShowAlert(false)}
               dismissible
             >
-              <BsFillPersonFill className="text-profile text-center" /> Order Assigned To {assignedAgent.name}
+              <BsFillPersonFill  className="text-profile text-center" /><img src="{assignedAgent.agentimage}"></img> Order Assigned To {assignedAgent.firstname} 
             </Alert>
           )}
         </div>
@@ -58,7 +58,8 @@ function AssignPage() {
           <div key={user.id} className="agent-card">
             <div className="agent-info">
               <h2>
-                <BsFillPersonFill /> {user.name}
+              <img src="{user.agentimage}"/>
+                <BsFillPersonFill /> {user.firstname}
               </h2>
               <p>{user.location}</p>
               <button

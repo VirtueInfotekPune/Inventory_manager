@@ -59,6 +59,7 @@ const QueuePage = (props) => {
       <div className="order-row">
         <div className="order-row-title">Order Number</div>
         <div className="order-row-title">Items</div>
+        {/* <div className="order-row-title">Quant</div> */}
         <div className="order-row-title">Buttons</div>
       </div>
       <div className="orders-container">
@@ -68,12 +69,13 @@ const QueuePage = (props) => {
           <div key={order.orderNumber} className="order-card">
             <h2>Order #{order.orderNumber}</h2>
             <p>{order.details}</p>
+            {/* <p>{order.quantity}</p> */}
             <div className="btn">
-              <Link to={`/orderdetail/:${order.id}`} className="update-button">
+              <Link to={`/orderdetail/${order.id}`} className="update-button">
                 Know More
               </Link>
               <Link to="/orderassign" className="update-button">
-                Assign
+                Assign to Agent
               </Link>
             </div>
           </div>
