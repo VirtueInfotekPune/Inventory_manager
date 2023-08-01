@@ -48,5 +48,19 @@
     .order-card {
       padding: 5px;
     }
+    
+  }
+  @media (max-width:768px){
+    .w-auto {
+      width: 93%!important;
+      margin-left: 12px !important;
+  }
+  }
+  .order-ss{
+
+    background-color: red !important;
+    height: 10vh;
+    width: 50%;
+    position: relative;
   }
   

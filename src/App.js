@@ -4,9 +4,12 @@ import OrderQueue from "./routes/OrderQueue";
 import Detail from "./routes/Detail";
 import { Routes, Route } from "react-router-dom";
 import Assignment from "./routes/Assignment";
-import knowMore from "./Components/KnowMore/KnowMore"
+// import knowMore from "./Components/KnowMore/KnowMore"
 
 function App() {
+
+
+
   return (
     <div>
       <Routes>

@@ -8,6 +8,7 @@ function Main() {
     <div className="container">
       <div className="sidebar"><Sidebar /></div>
       <div className="main"><Home /></div>
+      
     </div>
   );
 }
