@@ -13,7 +13,7 @@ const KnowMorePage = ({ products }) => {
 
   // console.log(agents)
 
-  // console.log('vedant',selectedItems)
+  console.log('vedant',selectedItems)
 
 
   useEffect(() => {
@@ -55,8 +55,8 @@ const KnowMorePage = ({ products }) => {
 
 
   // Function to handle sending the order to the API
-   // Function to handle sending the order to the API
-   const sendOrderToAPI = async () => {
+  // Function to handle sending the order to the API
+  const sendOrderToAPI = async () => {
     try {
       if (!selectedAgentId) {
         setOrderPlaced2(true);
@@ -76,7 +76,7 @@ const KnowMorePage = ({ products }) => {
 
       console.log("Order to send:", orderData);
 
-      const response = await axios.post("http://127.0.0.1:5000/orders", orderData);
+      const response = await axios.post("https://node-api-da.onrender.com/orders", orderData);
 
       if (response.status === 200) {
         setOrderPlaced(true);
@@ -114,8 +114,11 @@ const KnowMorePage = ({ products }) => {
               {product.items.map((item, index) => (
                 <li key={index}>
                   <p>Product Name: {item.productname}</p>
-                  <p>Quantity: {item.quantity}</p>
+                  <p>Quantity: {item.quantity}{item.uom}</p>
                   <p>Product Price: {item.productprice}</p>
+                  <p>Subcategory: {item.subcategory}</p>
+                  <p>Offer: {item.offer}</p>
+                  <p>Image: {item.image}</p>
                   <button onClick={() => handleAddToOrder(item)}
                     className="update-button"
                   >Add to Order</button><hr />
@@ -133,7 +136,10 @@ const KnowMorePage = ({ products }) => {
                     <li key={index}>
                       <p>Product Name: {item.productname}</p>
                       <p>Quantity: {item.quantity}</p>
-                      <p>Product Price: {item.productprice}</p>
+                      <p>Product Price: {item.productprice}{item.uom}</p>
+                      <p>Subcategory: {item.subcategory}</p>
+                      <p>Offer: {item.offer}</p>
+                      <p>Image: {item.image}</p>
                     </li>
                   ))}
                 </ul>
@@ -157,7 +163,7 @@ const KnowMorePage = ({ products }) => {
                 </select><br></br><br></br>
                 <button onClick={sendOrderToAPI} className="update-button w-auto text-center">Send Order</button><br></br><br></br>
 
-       
+
               </>
             )}
 
@@ -175,19 +181,19 @@ const KnowMorePage = ({ products }) => {
         Add to Order
         </Link> */}
         {orderPlaced2 && (
-        <div className="cart-message2">
-          <p className="order-ss" 
-          style={{backgroundColor:"red", width:"50%", color:"#ffff", position:"absolute",marginTop:"-820px",width:"auto",textAlign:"center",borderRadius:"2px",}}  
-          
-          > Please select an agent before sending the order.</p>
-        </div>
-      )}
+          <div className="cart-message2">
+            <p className="order-ss"
+              style={{ backgroundColor: "red", width: "50%", color: "#ffff", position: "absolute", marginTop: "-820px", width: "auto", textAlign: "center", borderRadius: "2px", }}
 
-{orderPlaced && (
-        <div className="cart-message">
-          <p> Order sent successfully!</p>
-        </div>
-      )}
+            > Please select an agent before sending the order.</p>
+          </div>
+        )}
+
+        {orderPlaced && (
+          <div className="cart-message">
+            <p> Order sent successfully!</p>
+          </div>
+        )}
       </div>
     </>
   );
